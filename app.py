@@ -507,6 +507,7 @@ def create_treemap(df, title):
                                                                     ####LAYOUT####
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
+server = app.server 
 
 app.layout = dbc.Container(
 children=[
@@ -700,4 +701,4 @@ def update_graphs(selected_año, selected_value):
                                                             ######EJECUCIÓN#####
 
 if __name__ == '__main__':
-    app.run_server(debug=False, host='0.0.0.0', port=8080)
+    app.run_server(debug=True)
