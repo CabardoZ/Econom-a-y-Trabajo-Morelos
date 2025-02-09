@@ -31,10 +31,6 @@ xls = pd.ExcelFile('PROYECTO VIII ECONOMÍA Y TRABAJO.xlsx')
 
                                                                         #### DATOS ##
 
-
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
-server = app.server
-
  
 df_general=pd.read_excel(file_name,sheet_name='GENERAL')
 df_municipios=pd.read_excel(file_name,sheet_name='MUNICIPIOS ECONOMÍA')
@@ -264,6 +260,9 @@ color_map = {
     }
 
                                                                         ####GRÁFICOS######
+
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
+server = app.server
 # Función para crear el gráfico 'GENERAL'
 def create_general_graph():
     fig_general = go.Figure()
